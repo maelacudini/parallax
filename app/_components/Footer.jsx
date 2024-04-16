@@ -1,5 +1,5 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
@@ -25,11 +25,15 @@ export default function Footer() {
         <div className="flex flex-wrap uppercase">
           {words.map((word, i) => {
             const y = useTransform(scrollYProgress, [0, 1], [0, i * -100 - 50]);
+            const ySpring = useSpring(y, {
+              stiffness: 1000,
+              damping: 200,
+            });
             return (
               <motion.div
                 className="h1"
                 key={i}
-                style={{ y: y, color: i + 1 === words.length && "white" }}
+                style={{ y: ySpring, color: i + 1 === words.length && "white" }}
               >
                 {word}&nbsp;
               </motion.div>

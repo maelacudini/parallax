@@ -1,5 +1,5 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export default function Wooo() {
@@ -24,18 +24,26 @@ export default function Wooo() {
             [0, 1],
             [Math.random() * 100 - 50, 0]
           );
+          const yPariSpring = useSpring(yPari, {
+            stiffness: 1000,
+            damping: 200,
+          });
           const yDispari = useTransform(
             scrollYProgress,
             [0, 1],
             [Math.random() * -100 - 50, 0]
           );
+          const yDispariSpring = useSpring(yDispari, {
+            stiffness: 1000,
+            damping: 200,
+          });
 
           return (
             <motion.p
               key={i}
               style={{
                 color: i % 2 && "white",
-                y: i % 2 ? yPari : yDispari,
+                y: i % 2 ? yPariSpring : yDispariSpring,
               }}
               className="h1 uppercase"
             >

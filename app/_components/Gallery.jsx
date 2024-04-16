@@ -13,8 +13,8 @@ export default function Gallery() {
   const xLeft = useTransform(scrollYProgress, [0, 1], [250, -500]);
   const xRight = useTransform(scrollYProgress, [0, 1], [-250, 500]);
   const y = useTransform(scrollYProgress, [0, 1], ["0rem", "50rem"]);
-  const xLeftSpring = useSpring(xLeft);
-  const xRightSpring = useSpring(xRight);
+  const xLeftSpring = useSpring(xLeft, { stiffness: 1000, damping: 200 });
+  const xRightSpring = useSpring(xRight, { stiffness: 1000, damping: 200 });
 
   return (
     <section ref={ref} className="overflow-hidden pt-[5lvh] pb-[5lvh]">

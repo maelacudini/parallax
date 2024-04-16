@@ -51,7 +51,7 @@ export default function About() {
             [0, 0.5],
             [(i + 1) * 50 + 25, 0]
           );
-          const spring = useSpring(x);
+          const spring = useSpring(x, { stiffness: 1000, damping: 200 });
           return (
             <motion.div
               key={i}
