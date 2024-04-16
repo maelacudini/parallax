@@ -44,12 +44,12 @@ export default function Footer() {
         </div>
         <div className="grow basis-80 flex flex-col gap-8">
           <div className="bg-white p-4 flex justify-between">
-            <Link
-              href={"/"}
+            <a
+              href={"https://github.com/maelacudini/parallax.git"}
               className="h3 uppercase hover:text-slate-400 transition duration-300"
             >
               Check out the repo
-            </Link>
+            </a>
             <Image
               alt="arrow"
               src={"/arrow.svg"}
