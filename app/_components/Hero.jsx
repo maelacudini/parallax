@@ -29,11 +29,7 @@ export default function Hero() {
 
       <div className="flex flex-wrap uppercase">
         {words.map((word, i) => {
-          const y = useTransform(
-            scrollYProgress,
-            [0, 0.5],
-            [0, Math.floor(Math.random() * -100) - 50]
-          );
+          const y = useTransform(scrollYProgress, [0, 1], [0, i * -100 - 50]);
           return (
             <motion.div
               className="h1"

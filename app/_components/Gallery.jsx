@@ -1,5 +1,5 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { images } from "../_utils/data";
 import Image from "next/image";
 import { useRef } from "react";
@@ -13,6 +13,8 @@ export default function Gallery() {
   const xLeft = useTransform(scrollYProgress, [0, 1], [250, -500]);
   const xRight = useTransform(scrollYProgress, [0, 1], [-250, 500]);
   const y = useTransform(scrollYProgress, [0, 1], ["0rem", "50rem"]);
+  const xLeftSpring = useSpring(xLeft);
+  const xRightSpring = useSpring(xRight);
 
   return (
     <section ref={ref} className="overflow-hidden">
@@ -22,7 +24,7 @@ export default function Gallery() {
             key={i}
             className="flex overflow-hidden"
             style={{
-              x: i % 2 ? xLeft : xRight,
+              x: i % 2 ? xLeftSpring : xRightSpring,
               justifyContent: i % 2 ? "flex-end" : "flex-start",
             }}
           >

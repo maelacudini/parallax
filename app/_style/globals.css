@@ -31,7 +31,7 @@ body {
 
 h1,
 .h1 {
-  font-size: clamp(3.125rem, -4.6875rem + 25vw, 9.375rem);
+  font-size: clamp(3.125rem, -2.3438rem + 17.5vw, 7.5rem);
   line-height: 1;
   font-weight: 600;
 }
