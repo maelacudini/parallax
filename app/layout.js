@@ -4,7 +4,7 @@ import "./_style/globals.css";
 const font = Poppins({ subsets: ["latin"], weight: ["100", "200", '300', '400', '500', '600', '700', '800'] });
 
 export const viewport = {
-  themeColor: 'white',
+  themeColor: '#c9cbd4',
 }
 
 export const metadata = {

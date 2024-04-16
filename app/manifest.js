@@ -5,8 +5,8 @@ export default function manifest() {
         short_name: 'Parallax',
         start_url: '/',
         display: 'standalone',
-        background_color: '#fff',
-        theme_color: '#fff',
+        background_color: '#c9cbd4',
+        theme_color: '#c9cbd4',
         icons: [
             {
                 src: '/icon.png',

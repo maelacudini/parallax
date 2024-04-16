@@ -11,7 +11,7 @@ export default function Footer() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end start"],
   });
 
   const width = useTransform(scrollYProgress, [0, 0.5], ["0%", "100%"]);
