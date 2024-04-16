@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-export default function Woo() {
+export default function Wooo() {
   const word = "woooo";
   const letters = word.split("");
 
@@ -19,11 +19,15 @@ export default function Woo() {
     >
       <div className="flex">
         {letters.map((letter, i) => {
-          const yPari = useTransform(scrollYProgress, [0, 1], [i * 10 + 25, 0]);
+          const yPari = useTransform(
+            scrollYProgress,
+            [0, 1],
+            [Math.random() * 100 - 50, 0]
+          );
           const yDispari = useTransform(
             scrollYProgress,
             [0, 1],
-            [i * -10 - 25, 0]
+            [Math.random() * -100 - 50, 0]
           );
 
           return (
