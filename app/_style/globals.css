@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #acacac;
+}
+
+/*general rules*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #161616;
+}
+
+h1,
+.h1 {
+  font-size: clamp(3.125rem, -4.6875rem + 25vw, 9.375rem);
+  line-height: 1;
+  font-weight: 600;
+}
+
+h2,
+.h2 {
+  font-size: clamp(2.1875rem, 1.0156rem + 3.75vw, 3.125rem);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+h3,
+.h3 {
+  font-size: clamp(1.5625rem, 1.1719rem + 1.25vw, 1.875rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+p,
+button,
+a {
+  font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
+  line-height: 1.25;
+  text-decoration: none;
+  font-family: inherit;
+  color: inherit;
+  font-weight: 400;
+}
+
+/*links: className="hover:text-slate-400 transition duration-300"*/
