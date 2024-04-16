@@ -53,7 +53,11 @@ export default function About() {
           );
           const spring = useSpring(x);
           return (
-            <motion.div style={{ x: spring }} className="flex flex-col gap-4">
+            <motion.div
+              key={i}
+              style={{ x: spring }}
+              className="flex flex-col gap-4"
+            >
               <div className="flex gap-4 justify-between items-center">
                 <p className="h3 uppercase">
                   0{i + 1}. {data.title}

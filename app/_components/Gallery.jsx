@@ -17,7 +17,7 @@ export default function Gallery() {
   const xRightSpring = useSpring(xRight);
 
   return (
-    <section ref={ref} className="overflow-hidden">
+    <section ref={ref} className="overflow-hidden pt-[5lvh] pb-[5lvh]">
       {images.map((img, i) => {
         return (
           <motion.div

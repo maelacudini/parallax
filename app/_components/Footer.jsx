@@ -19,21 +19,23 @@ export default function Footer() {
   return (
     <footer
       ref={ref}
-      className="min-h-lvh pt-[5lvh] pb-[5lvh] pr-[5lvw] pl-[5lvw] flex flex-col justify-end gap-16"
+      className="pt-[10lvh] pb-[5lvh] pr-[5lvw] pl-[5lvw] flex flex-col gap-16"
     >
-      <div className="flex flex-wrap uppercase">
-        {words.map((word, i) => {
-          const y = useTransform(scrollYProgress, [0, 1], [0, i * -100 - 50]);
-          return (
-            <motion.div
-              className="h1"
-              key={i}
-              style={{ y: y, color: i + 1 === words.length && "white" }}
-            >
-              {word}&nbsp;
-            </motion.div>
-          );
-        })}
+      <div className="min-h-lvh flex items-end">
+        <div className="flex flex-wrap uppercase">
+          {words.map((word, i) => {
+            const y = useTransform(scrollYProgress, [0, 1], [0, i * -100 - 50]);
+            return (
+              <motion.div
+                className="h1"
+                key={i}
+                style={{ y: y, color: i + 1 === words.length && "white" }}
+              >
+                {word}&nbsp;
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
       <motion.div style={{ width }} className="border-t border-current" />
       <div className="flex flex-wrap gap-8">
